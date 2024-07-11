@@ -1,0 +1,52 @@
+<div class="registration-form-container">
+  <div class="registration-form">
+    <h1>Create an Account</h1>
+    <form (ngSubmit)="onSubmit()" #registrationForm="ngForm">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required
+               [(ngModel)]="user.username" #username="ngModel">
+        <div *ngIf="username.invalid && (username.dirty || username.touched)" class="error-message">
+          <div *ngIf="username.errors?.required">Username is required.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required
+               [(ngModel)]="user.email" #email="ngModel">
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error-message">
+          <div *ngIf="email.errors?.required">Email is required.</div>
+          <div *ngIf="email.errors?.email">Invalid email format.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required
+               [(ngModel)]="user.password" #password="ngModel">
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error-message">
+          <div *ngIf="password.errors?.required">Password is required.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required
+               [(ngModel)]="confirmPassword" #confirmPassword="ngModel">
+        <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)" class="error-message">
+          <div *ngIf="confirmPassword.errors?.required">Please confirm your password.</div>
+          <div *ngIf="confirmPassword.value !== user.password">Passwords do not match.</div>
+        </div>
+      </div>
+      <button type="submit" class="heart-button">❤️ Register</button>
+    </form>
+    <!-- Add floating hearts -->
+    <div class="heart heart-small" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="heart" style="left: 20%; animation-delay: 1s;"></div>
+    <div class="heart heart-large" style="left: 30%; animation-delay: 2s;"></div>
+    <div class="heart" style="left: 40%; animation-delay: 3s;"></div>
+    <div class="heart heart-small" style="left: 50%; animation-delay: 4s;"></div>
+    <div class="heart" style="left: 60%; animation-delay: 5s;"></div>
+    <div class="heart heart-large" style="left: 70%; animation-delay: 6s;"></div>
+    <div class="heart" style="left: 80%; animation-delay: 7s;"></div>
+    <div class="heart heart-small" style="left: 90%; animation-delay: 8s;"></div>
+  </div>
+</div>
