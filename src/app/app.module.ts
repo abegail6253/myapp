@@ -1,29 +1,26 @@
-import { BrowserModule } from '@angular/platform-browser';
+// app.module.ts
+
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
-import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
-import { RouterModule, Routes } from '@angular/router'; // Import RouterModule
+import { RouterModule } from '@angular/router'; // Import RouterModule
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { IndexComponent } from './index/index.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
-
-const routes: Routes = [
-  { path: '', component: IndexComponent },
-  { path: 'register', component: RegistrationFormComponent }
-];
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent,
-    RegistrationFormComponent
+    RegistrationFormComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule, // Add FormsModule to imports
-    HttpClientModule, // Add HttpClientModule to imports
-    RouterModule.forRoot(routes) // Add RouterModule to imports
+    FormsModule, // Include FormsModule here
+    AppRoutingModule,
+    RouterModule // Include RouterModule here
   ],
   providers: [],
   bootstrap: [AppComponent]

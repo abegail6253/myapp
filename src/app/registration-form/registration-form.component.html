@@ -1,7 +1,9 @@
+<!-- registration-form.component.html -->
+
 <div class="registration-form-container">
   <div class="registration-form">
     <h1>Create an Account</h1>
-    <form (ngSubmit)="onSubmit()" #registrationForm="ngForm">
+    <form #registrationForm="ngForm" (ngSubmit)="onSubmit(registrationForm)">
       <div class="form-group">
         <label for="username">Username</label>
         <input type="text" id="username" name="username" placeholder="Enter your username" required
